@@ -1,0 +1,22 @@
+{
+  "name": "implementacionservidor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "julian",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "demo": "^0.1.10",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11"
+  }
+}
