@@ -1,11 +1,17 @@
+require('dotenv').config()
 const express = require('express');
 const app = express()
 const morgan = require('morgan')
 const cors = require('cors')
+const Note = require('./note')
 app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'));
 app.use(express.static('dist'))
+
+
+  
+
 
 let notes = [
   {
@@ -39,7 +45,9 @@ app.get('/',(request,response)=>{
 })
 
 app.get('/api/notes',(request,response)=>{
-    response.json(notes)
+    Note.find({}).then(notes=>{
+        response.json(notes)
+    })
 })
 
 app.get('/api/notes/:id',(request,response)=>{
@@ -84,7 +92,8 @@ const generarId = ()=>{
     return maxId+1
 }
 
-const PORT =process.env.PORT || 3001
+const PORT =process.env.PORT
 app.listen(PORT,()=>{
     console.log('el servidor esta escuchando en el puerto',PORT)
 })
+
