@@ -1,0 +1,4 @@
+//credenciales de acceso para acceder a la base de datos
+//usuario: julianAdmin123
+//contraseña: RHn0sm3lWxAIgfOi
+//mongodb+srv://<db_username>:<db_password>@cluster0.udugpxl.mongodb.net/?appName=Cluster0

@@ -16,7 +16,11 @@ mongoose.connect(URL)
     })
 
 const noteSchema = new mongoose.Schema({
-    content: String,
+    content: {
+        type: String,
+        required: true,
+        minLength:5
+    },
     important: Boolean,
 })
 
@@ -25,7 +29,7 @@ noteSchema.set('toJSON',{
         returnedObject.id = returnedObject._id.toString()
         delete returnedObject._id
         delete returnedObject.__v
-        delete returnedObject.id
+        //delete returnedObject.id
     }
 })
 const Note = mongoose.model('Note',noteSchema)
